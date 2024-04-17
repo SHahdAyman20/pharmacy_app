@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: FlutterSplashScreen(
         backgroundColor: backgroundColor,
-        duration:const Duration(seconds: 10),
+        duration:const Duration(seconds: 3),
         splashScreenBody: Center(
           child: Image.asset(
             'assets/logoooo.png',
