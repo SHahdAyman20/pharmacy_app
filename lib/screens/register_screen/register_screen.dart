@@ -4,6 +4,7 @@ import 'package:pharmacy_app/custom_widgets/custom_button.dart';
 import 'package:pharmacy_app/custom_widgets/custom_text_field.dart';
 import 'package:pharmacy_app/custom_widgets/login_and_register_body.dart';
 import 'package:pharmacy_app/screens/forget_password_screen/forget_password_screen.dart';
+import 'package:pharmacy_app/screens/login_screen/login_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -192,7 +193,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     height: 5.h,
                   ),
                   // don't have an account ??
-                  accountOption(question: 'Already have an account ?', option: 'Sign in',context: context,navToScreen: const RegisterScreen())
+                  accountOption(question: 'Already have an account ?', option: 'Sign in',context: context,navToScreen: const LoginScreen())
                 ],
               ),
             ),
