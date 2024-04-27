@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           locale: PlatformDispatcher.instance.locale,
           debugShowCheckedModeBanner: false,
           title: 'Pharmacy app',
-          home:  const CallUsScreen(),
+          home:  const SplashScreen(),
         ));
       },
     );
