@@ -7,8 +7,6 @@ import 'package:pharmacy_app/screens/home_screen/api_handling/user_cubit/user_st
 import 'package:pharmacy_app/screens/login_screen/login_api/login_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../../shared/network/network.dart';
-
 
 
 class UserDateCubit extends Cubit<UserDateState>{

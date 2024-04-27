@@ -4,9 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:pharmacy_app/const/const.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-Widget appLogo() {
+Widget customHeader(){
+  return Opacity(
+      opacity: .4,
+      child: Image.asset("assets/header.png"));
+}
+
+Widget appLogo({required String imagePath}) {
   return Image.asset(
-    'assets/logoooo.png',
+    imagePath,
     height: 21.h,
     width: double.infinity,
   );
@@ -79,12 +85,13 @@ Widget accountOption({required Widget navToScreen,required BuildContext context,
       ),
       GestureDetector(
         onTap: (){
-          Navigator.push(
+          Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(
                 builder: (
                     BuildContext context) => navToScreen
             ),
+                (route) => false,
           );
         },
         child: Text(
@@ -98,5 +105,15 @@ Widget accountOption({required Widget navToScreen,required BuildContext context,
         ),
       ),
     ],
+  );
+}
+
+navToScreen(context,{required Widget navToScreen}){
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+        builder: (
+            BuildContext context) => navToScreen
+    ),
   );
 }

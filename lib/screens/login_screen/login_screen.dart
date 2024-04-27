@@ -1,20 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pharmacy_app/const/const.dart';
-import 'package:pharmacy_app/custom_widgets/custom_button.dart';
+import 'package:pharmacy_app/custom_widgets/custom_elevated_button.dart';
 import 'package:pharmacy_app/custom_widgets/custom_gradiant.dart';
 import 'package:pharmacy_app/custom_widgets/custom_text_field.dart';
-import 'package:pharmacy_app/custom_widgets/login_and_register_body.dart';
-import 'package:pharmacy_app/screens/forget_password_screen/forget_password_screen.dart';
-import 'package:pharmacy_app/screens/home_screen/api_handling/user_cubit/user_cubit.dart';
+import 'package:pharmacy_app/custom_widgets/custom_widgets.dart';
 import 'package:pharmacy_app/screens/register_screen/register_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-
-import '../../localization/app_localization.dart';
 import '../../localization/lang_cubit/cubit.dart';
-import '../register_screen/register_api/register_cubit.dart';
-import '../register_screen/register_api/register_state.dart';
 import 'login_api/login_cubit.dart';
 import 'login_api/login_state.dart';
 
@@ -26,7 +18,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   late TextEditingController emailController;
   late TextEditingController passwordController;
   late TextEditingController nameController;
@@ -48,12 +39,11 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     final languageCubit = BlocProvider.of<LanguageCubit>(context);
 
-    return BlocConsumer<LoginCubit,LoginState>(builder: (context,state){
+    return BlocConsumer<LoginCubit, LoginState>(builder: (context, state) {
       return Scaffold(
         body: Form(
           key: formKey,
@@ -63,8 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Stack(
                   children: [
-                    CustomHeader(),
-
+                     customHeader(),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
@@ -73,10 +62,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             height: 3.h,
                           ),
                           InkWell(
-                              onTap: (){
+                              onTap: () {
                                 // languageCubit.selectLanguage(Language.arabic);
                               },
-                              child: appLogo()),
+                              child: appLogo(imagePath: 'assets/logoooo.png')),
                           SizedBox(
                             height: 2.h,
                           ),
@@ -131,47 +120,16 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
-                          // customTextFieldRow(
-                          //   iconTextField: 'assets/mdi_password-outline.png',
-                          //   textField: CustomTextField(
-                          //     hintText: 'name',
-                          //     type: TextInputType.visiblePassword,
-                          //     action: TextInputAction.done,
-                          //     controller: nameController,
-                          //     obscureText: obscureText,
-                          //     validator: (pass) {
-                          //       if (pass.isEmpty) {
-                          //         return 'This field is required!';
-                          //       } else if (pass.toString().length < 8) {
-                          //         return 'this password too weak !';
-                          //       }
-                          //     },
-                          //     suffixIcon: IconButton(
-                          //       onPressed: () {
-                          //         obscureText = !obscureText;
-                          //         setState(() {});
-                          //       },
-                          //       icon: obscureText
-                          //           ? const Icon(Icons.visibility_off)
-                          //           : const Icon(Icons.visibility),
-                          //     ),
-                          //   ),
-                          // ),
-                          // forget password ??
-                          forgotPassword(context: context,navToScreen: const ForgetPasswordScreen()),
                           SizedBox(
                             height: 2.h,
                           ),
                           // login button
                           CustomElevatedButton(
-                            onPressed: (){
-BlocProvider.of<LoginCubit>(context).login(email: emailController.text, password: passwordController.text);
-                            },
-                            text: 'Log In',
-                          ),
-                          CustomElevatedButton(
-                            onPressed: (){
-BlocProvider.of<UserDateCubit>(context).getUserData();
+                            onPressed: () {
+                              BlocProvider.of<LoginCubit>(context).login(
+                                email: emailController.text,
+                                password: passwordController.text,
+                              );
                             },
                             text: 'Log In',
                           ),
@@ -182,7 +140,8 @@ BlocProvider.of<UserDateCubit>(context).getUserData();
                           accountOption(
                               question: 'Don\'t have an account ? ',
                               option: 'Sign up',
-                              context: context,navToScreen: const RegisterScreen())
+                              context: context,
+                              navToScreen: const RegisterScreen())
                         ],
                       ),
                     ),
@@ -193,11 +152,9 @@ BlocProvider.of<UserDateCubit>(context).getUserData();
           ),
         ),
       );
-    }, listener: (context,state){
-      if(state is LoginFailureState){
-      }else{
-
-      }
+    }, listener: (context, state) {
+      if (state is LoginFailureState) {
+      } else {}
     });
   }
 }

@@ -1,13 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pharmacy_app/const/const.dart';
-import 'package:pharmacy_app/custom_widgets/custom_button.dart';
+import 'package:pharmacy_app/custom_widgets/custom_elevated_button.dart';
 import 'package:pharmacy_app/custom_widgets/custom_gradiant.dart';
 import 'package:pharmacy_app/custom_widgets/custom_text_field.dart';
-import 'package:pharmacy_app/custom_widgets/login_and_register_body.dart';
-import 'package:pharmacy_app/screens/forget_password_screen/forget_password_screen.dart';
+import 'package:pharmacy_app/custom_widgets/custom_widgets.dart';
 import 'package:pharmacy_app/screens/login_screen/login_screen.dart';
 import 'package:pharmacy_app/screens/register_screen/register_api/register_cubit.dart';
 import 'package:pharmacy_app/screens/register_screen/register_api/register_state.dart';
@@ -62,12 +58,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 Stack(
                   children: [
-                    CustomHeader(),
+                    customHeader(),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
-                          appLogo(),
+                          appLogo(imagePath: 'assets/logoooo.png'),
                           SizedBox(
                             height: 1.h,
                           ),
@@ -190,16 +186,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
                           ),
-                          // forget password ??
-                          forgotPassword(context: context,navToScreen: const ForgetPasswordScreen()),
-                          SizedBox(
+                            SizedBox(
                             height: 2.h,
                           ),
                           // login button
                           CustomElevatedButton(
                             onPressed: (){
                                 if(formKey.currentState!.validate()) {
-                                  BlocProvider.of<RegisterCubit>(context).registerUser(emailController.text, firstNameController.text,
+                                 BlocProvider.of<RegisterCubit>(context).registerUser(emailController.text, firstNameController.text,
                     passwordController.text, confirmPasswordController.text);
                                 }
                             },
@@ -250,16 +244,5 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 }
 
-class CustomHeader extends StatelessWidget {
-  const CustomHeader({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Opacity(
-        opacity: .4,
-        child: Image.asset("assets/header.png"));
-  }
-}
 
