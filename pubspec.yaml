@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.0-80.0.dev <4.0.0'
+  sdk: '>=3.3.0-80.0.dev <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,7 +38,13 @@ dependencies:
   dio: ^5.4.3+1
   another_flutter_splash_screen: ^1.2.0
   responsive_sizer: ^3.3.1
-
+  animate_do: ^3.3.4
+  bloc:
+  flutter_bloc:
+  http:
+  shared_preferences: ^2.0.0
+  flutter_localization: ^0.2.0
+  fluttertoast: ^8.2.5
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -65,6 +71,7 @@ flutter:
   assets:
      - assets/
      - assets/logoooo.png
+     - assets/localization/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

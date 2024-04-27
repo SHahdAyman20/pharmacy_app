@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/const/const.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -6,7 +7,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 Widget appLogo() {
   return Image.asset(
     'assets/logoooo.png',
-    height: 25.h,
+    height: 21.h,
     width: double.infinity,
   );
 }
@@ -15,7 +16,7 @@ Widget welcomeText({required String text}) {
   return Text(
     text,
     style: TextStyle(
-        fontSize: 24.sp, fontWeight: FontWeight.w500, color: primaryColor),
+        fontSize: 20.sp, fontWeight: FontWeight.w500, color: primaryColor),
   );
 }
 
@@ -70,7 +71,7 @@ Widget accountOption({required Widget navToScreen,required BuildContext context,
       Text(
         question,
         style: TextStyle(
-          fontSize: 18.sp,
+          fontSize: 17.sp,
           fontWeight: FontWeight.w800,
           color: primaryColor,
 
@@ -89,7 +90,7 @@ Widget accountOption({required Widget navToScreen,required BuildContext context,
         child: Text(
           option,
           style: TextStyle(
-            fontSize: 18.sp,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w500,
             color: secondaryColor,
 
