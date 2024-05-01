@@ -3,7 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pharmacy_app/localization/lang_cubit/cubit.dart';
+import 'package:pharmacy_app/screens/bottom_nav_bar/cubit/cubit.dart';
 import 'package:pharmacy_app/screens/call_us_screen/call_us_screen.dart';
+import 'package:pharmacy_app/screens/home_screen/api_handling/home_cubit/home_cubit.dart';
 import 'package:pharmacy_app/screens/home_screen/api_handling/user_cubit/user_cubit.dart';
 import 'package:pharmacy_app/screens/login_screen/login_api/login_cubit.dart';
 import 'package:pharmacy_app/screens/register_screen/register_api/register_cubit.dart';
@@ -28,6 +30,8 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (context)=>LanguageCubit()),
           BlocProvider(create: (context)=>RegisterCubit()),
           BlocProvider(create: (context)=>LoginCubit()),
+          BlocProvider(create: (context)=>BottomNavBarCubit()),
+          BlocProvider(create: (context)=>HomeCubit()),
           BlocProvider(create: (context)=>UserDateCubit()..getUserData()),
 
         ], child: MaterialApp(

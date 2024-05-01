@@ -4,6 +4,7 @@ import 'package:pharmacy_app/custom_widgets/custom_elevated_button.dart';
 import 'package:pharmacy_app/custom_widgets/custom_gradiant.dart';
 import 'package:pharmacy_app/custom_widgets/custom_outlined_button.dart';
 import 'package:pharmacy_app/custom_widgets/custom_widgets.dart';
+import 'package:pharmacy_app/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
 import 'package:pharmacy_app/screens/home_screen/home_screen.dart';
 import 'package:pharmacy_app/screens/login_screen/login_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -53,7 +54,7 @@ class OptionForLoginOrHomeScreen extends StatelessWidget {
                 CustomElevatedButton(
                     text: 'Start Now!',
                     onPressed: (){
-                      navToScreen(context, navToScreen:const  HomeScreen());
+                      navToScreen(context, navToScreen:const  BottomNavBarScreen());
                     }
                 ),
                 SizedBox(height: 1.h,),
