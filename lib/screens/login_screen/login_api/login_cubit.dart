@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../../shared/network/network.dart';
 import 'login_state.dart';
 
 
@@ -17,10 +16,10 @@ class LoginCubit extends Cubit<LoginState>{
     emit(LoginLoadingState());
     try{
       final response = await http.post(
-        Uri.parse('https://7a5d-197-43-165-63.ngrok-free.app/api/login'),
+        Uri.parse('https://cogitable-trust.000webhostapp.com/auth/sign_in.php'),
         body: {
-          'password': password,
-          'email' : email ,
+          'user_password': password,
+          'user_email' : email ,
         },
       );
       if( response.statusCode == 200)

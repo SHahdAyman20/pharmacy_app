@@ -7,6 +7,7 @@ import 'package:pharmacy_app/custom_widgets/custom_widgets.dart';
 import 'package:pharmacy_app/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
 import 'package:pharmacy_app/screens/home_screen/home_screen.dart';
 import 'package:pharmacy_app/screens/login_screen/login_screen.dart';
+import 'package:pharmacy_app/screens/register_screen/register_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class OptionForLoginOrHomeScreen extends StatelessWidget {
@@ -61,7 +62,7 @@ class OptionForLoginOrHomeScreen extends StatelessWidget {
                 CustomOutlinedButton(
                   text: 'Sign Up ',
                   onPressed: (){
-                  navToScreen(context, navToScreen:const  LoginScreen());
+                  navToScreen(context, navToScreen:const  RegisterScreen());
                 },),
               ],
             )

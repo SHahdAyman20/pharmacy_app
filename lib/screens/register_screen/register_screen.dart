@@ -193,8 +193,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           CustomElevatedButton(
                             onPressed: (){
                                 if(formKey.currentState!.validate()) {
-                                 BlocProvider.of<RegisterCubit>(context).registerUser(emailController.text, firstNameController.text,
-                    passwordController.text, confirmPasswordController.text);
+                                 BlocProvider.of<RegisterCubit>(context).registerUser(emailController.text, firstNameController.text,secondNameController.text,
+                    passwordController.text,);
                                 }
                             },
                             text: 'Sign up',

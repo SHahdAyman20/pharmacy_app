@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import'package:http/http.dart' as http;
-import 'package:pharmacy_app/api_services/api_services.dart';
 import 'package:pharmacy_app/screens/register_screen/register_api/register_state.dart';
 
 
@@ -11,20 +10,19 @@ class RegisterCubit extends Cubit<RegisterState>{
   static RegisterCubit getInstance(context)=>BlocProvider.of(context);
 
 
-  Future<void> registerUser(String email,String name,String password,String confirm_pass) async {
+  Future<void> registerUser(String email,String fName,String password,String lName) async {
     try {
       emit(RegisterLoadingState());
 
       // Perform registration API call
       final response = await http.post(
         Uri.parse(
-            '${ApiServices()
-                .baseUrl}register'),
+            'https://cogitable-trust.000webhostapp.com/auth/sign_up.php'),
         body: {
-          'name':name,
-          'password': password,
-          'email' : email ,
-          'password_confirmation':confirm_pass
+          'first_name':fName,
+          'last_name':lName,
+          'user_password': password,
+          'user_email' : email ,
         },
       );
       debugPrint(">>>>>>>${response.body}");

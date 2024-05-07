@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/api_model/home_model/product_model.dart';
 import 'package:pharmacy_app/const/const.dart';
+import 'package:pharmacy_app/screens/home_screen/widgets/product_details_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class ProductWidget extends StatefulWidget {
@@ -16,7 +17,9 @@ class _ProductWidgetState extends State<ProductWidget> {
   @override
   Widget build(BuildContext context) {
     return  GestureDetector(
-      onTap: (){},
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetails(model: products[widget.index],)));
+      },
       child: Container(
         padding: EdgeInsets.all(10.sp),
         width:50.w,
@@ -36,7 +39,6 @@ class _ProductWidgetState extends State<ProductWidget> {
 
                   setState(() {
                     products[widget.index].addToCart = !products[widget.index].addToCart;
-
                   });
                 },
                 child: CircleAvatar(

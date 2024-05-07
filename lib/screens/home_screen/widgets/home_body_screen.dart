@@ -1,13 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/const/const.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 Widget flexibleWidget(){
   return Container(
-    decoration: const BoxDecoration(
+    decoration:  BoxDecoration(
         color: whiteColor,
-        borderRadius: BorderRadius.only(bottomRight: Radius.circular(15),bottomLeft: Radius.circular(15))
+        border: Border.all(color: brownColor),
+        borderRadius: const BorderRadius.only(bottomRight: Radius.circular(15),bottomLeft: Radius.circular(15))
     ),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -110,3 +110,12 @@ Widget categoryItem({required String url}){
 
 
 
+Widget flexibleDetailsWidget(){
+  return Container(
+    decoration: BoxDecoration(
+        color: whiteColor,
+        border: Border.all(color: brownColor),
+        borderRadius: const BorderRadius.only(bottomRight: Radius.circular(15),bottomLeft: Radius.circular(15))
+    ),
+  );
+}

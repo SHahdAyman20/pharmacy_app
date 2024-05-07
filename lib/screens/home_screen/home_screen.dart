@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor:backgroundColor ,
         elevation: 0,
         centerTitle: true,
-        toolbarHeight: 20.h,
+        toolbarHeight: 22.h,
         leading: searchIconWidget(),
       ),
       body: Padding(
