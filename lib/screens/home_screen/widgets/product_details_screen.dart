@@ -41,6 +41,7 @@ class ProductDetails extends StatelessWidget {
                 ),
                 Expanded(child:  Container(
                   padding: EdgeInsets.all(15.sp),
+
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(topRight: Radius.circular(15),topLeft: Radius.circular(15)),
                     border: Border.symmetric(horizontal: BorderSide(color: brownColor))
