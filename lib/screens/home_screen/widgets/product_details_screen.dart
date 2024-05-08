@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pharmacy_app/api_model/home_model/product_model.dart';
@@ -127,7 +126,6 @@ class ProductDetails extends StatelessWidget {
                 ))
               ],
             ),
-
         );
       },
     );
