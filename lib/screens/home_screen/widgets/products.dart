@@ -36,7 +36,6 @@ class _ProductWidgetState extends State<ProductWidget> {
               alignment: Alignment.topRight,
               child: GestureDetector(
                 onTap: ( ) {
-
                   setState(() {
                     products[widget.index].addToCart = !products[widget.index].addToCart;
                   });
@@ -60,6 +59,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                   width: 20.w,
 
             ),
+            Text(products[widget.index].title,style: const TextStyle(fontWeight: FontWeight.bold),)
           ],
         ),
       ),

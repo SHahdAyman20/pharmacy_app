@@ -4,5 +4,21 @@ class HomeCubit extends Cubit<HomeStates> {
   HomeCubit() : super(HomeInitialState());
 
 
+  int productNum = 1 ;
+  void increment(){
+    productNum++;
+    emit(UpdateProductNumSuccessState());
+  }
+
+  void decrement(){
+    if( productNum > 1 )
+    {
+      productNum--;
+    }
+    emit(UpdateProductNumSuccessState());
+  }
+
+
+
 
 }

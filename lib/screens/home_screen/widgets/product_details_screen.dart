@@ -20,7 +20,12 @@ class ProductDetails extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             flexibleSpace: flexibleDetailsWidget(),
-            leading: const BackButton(),
+            leading: BackButton(
+              onPressed: (){
+                cubit.productNum = 1;
+                Navigator.pop(context);
+              },
+            ),
             centerTitle: true,
             backgroundColor:whiteColor ,
             elevation: 0,
@@ -69,16 +74,16 @@ class ProductDetails extends StatelessWidget {
                               [
                                 GestureDetector(
                                   onTap: () {
-                                    // cubit.decrement();
+                                     cubit.decrement();
                                   },
                                   child:  Text("-",style: TextStyle(fontSize: 20.sp,color: secondaryColor)),
                                 ),
                                 SizedBox(width: 3.w,),
-                                Text("1",style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),),
+                                Text(cubit.productNum.toString(),style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),),
                                 SizedBox(width: 3.w,),
                                 GestureDetector(
                                   onTap: () {
-                                    // cubit.increment();
+                                     cubit.increment();
                                   },
                                   child:  Text("+",style: TextStyle(fontSize: 20.sp,color: secondaryColor)),
                                 ),
@@ -108,6 +113,7 @@ class ProductDetails extends StatelessWidget {
                               ),
                               onPressed: ()
                               {
+
                                 // cubit.addOrRemoveFromCart(productID: model.id!);
                               },
                               textColor: Colors.white,

@@ -9,3 +9,4 @@ const Color whiteColor =  Color(0xffFFFFFF);
 const Color brownColor =  Color(0xffDAD4D4);
 const Color blackColor =  Color(0xff000000);
 const Color greyColor =  Color(0xffB7B2B2);
+const Color accentRedColor =  Color(0xffFBF2F2);

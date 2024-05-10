@@ -4,8 +4,9 @@ import 'package:pharmacy_app/screens/bottom_nav_bar/cubit/state.dart';
 import 'package:pharmacy_app/screens/call_us_screen/call_us_screen.dart';
 import 'package:pharmacy_app/screens/categories_screen/categories_screen.dart';
 import 'package:pharmacy_app/screens/home_screen/home_screen.dart';
-import 'package:pharmacy_app/screens/my_cart_screen/my_cart_screen.dart';
 import 'package:pharmacy_app/screens/profile_screen/profile_screen.dart';
+
+import '../../cart/shopping_cart/shopping_cart.dart';
 
 class BottomNavBarCubit extends Cubit<BottomNavBarStates> {
   BottomNavBarCubit() : super(LayoutInitialState());
@@ -21,7 +22,7 @@ class BottomNavBarCubit extends Cubit<BottomNavBarStates> {
     const HomeScreen(),
     const CategoriesScreen(),
     const CallUsScreen(),
-    const MyCartScreen(),
+    const ShoppingCard(),
     const ProfileScreen()
   ];
 }
