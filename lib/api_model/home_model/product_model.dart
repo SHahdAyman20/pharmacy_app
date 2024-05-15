@@ -6,6 +6,7 @@ class ProductModel {
   final String image ;
   final double price;
   bool addToCart ;
+  int count ;
   ProductModel(
       {
         required this.discount,
@@ -14,7 +15,8 @@ class ProductModel {
         required this.description,
         required this.image,
         required this.price,
-        this.addToCart = false
+        this.addToCart = false,
+        this.count = 0,
       }
       );
 }

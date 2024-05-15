@@ -102,6 +102,9 @@ class ProductDetails extends StatelessWidget {
                         child: Text(model.description.toString(),style:  const TextStyle(color: Color(0xffD2CCCC),fontWeight: FontWeight.bold),),
                       ),
                       const SizedBox(height: 10,),
+                      Text("Total : ${cubit.productNum *model.price } LE",
+                        textAlign: TextAlign.end,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children:
